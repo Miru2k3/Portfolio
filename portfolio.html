@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Portfolio Davy</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <script src="script.js"></script>
+  </head>
+<body>
+    <nav>
+        <a href="#AC">Accueil</a>
+        <a href="#VT">Veille Technologique</a>
+        <a href="#AP">A Propos</a>
+        <a href="#CM">Contact</a>
+    </nav>
+    <h1><u> Voici mon Portfolio ! </u></h1>
+
+    <header class="container-AC" id="AC">
+		
+        <div id="el1">
+              <span id="element"></span>
+              <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+            <script>
+                var typed = new Typed('#element', {
+                strings: ['Web Designer', 'Developpeur'],
+                typeSpeed: 100,
+                backSpeed: 50,
+                loop : true,
+            });
+            </script>
+        </div>
+        <p> Bienvenue sur mon Portfolio ! Je suis <font color="red"> HU Davy </font>, étudiant en première année de BTS SIO option SLAM au Lycée Louis Armand (75015) </p>
+
+    </header>
+
+    <div class="container" id="VT">
+        <h2 class="title">
+           Voici ma veille technologique !
+        </h2>
+        <div class="container-card">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Veille technologique : </h2>
+                    <p class="card-desc">Intélligence Artificielle</p>
+                    <a href="./veilletechno.html" target="_blank" class="card-button">Clique</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title"> Curriculum </br>vitae : </h2>
+                    <p class="card-desc">Voici mon CV</p>
+                    <a href="https://drive.google.com/file/d/1BBiEgDDNu1OU9TEDMvAQfsPdsjeqB-r7/view?usp=sharing" class="card-button">Clique</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Identité numérique : </h2>
+                    <p class="card-desc">Voici mon Linkedin</p>
+                    <a href="https://www.linkedin.com/in/hu-davy/" class="card-button">Clique</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="container" id="AP">
+        <h2 class="title">
+            Quelques informations utile à connaître sur moi !
+        </h2>
+
+        <div class="container-about">
+            <div class="col">
+                <img src="./image/Capture d’écran 2023-05-05 225436.png" alt="tee">
+            </div>
+            <div class="col1">
+                <p> Actuellement en BTS SIO option SLAM, 
+                    Je suis interessé par l'informatique, le developpement en particulier. </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('compétence')"> Compétence </p>
+                    <p class="tab-links" onclick="opentab('expérience')"> Expérience </p>
+                    <p class="tab-links" onclick="opentab('formation')"> Formation </p>
+                </div>
+                <div class="tab-contents active-tab" id="compétence">
+                    <ul>
+                        <li><span>C / Python (Programming Language)</span></li><br>
+                        <li><span>HTML / CSS (Hyper Text Markup Language) </span></li><br>
+                        <li><span>SQL / MySQL (Structured Query Language) </span></li><br>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="expérience">
+                    <ul>
+                        <li><span> Hardware (Montage PC) </span></li><br>
+                        <li><span> Commercial (Grossiste) </span></li><br>
+                        <li><span> Vehiculé (Boite automatique) </span></li><br>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="formation">
+                    <ul>
+                        <li><span>2022 – 2024 : Lycée Louis Armand (1ère année BTS SIO) </span></li><br>
+                        <li><span>2021 – 2022 : Epitech (1ère année en classe préparatoire aux Grandes écoles) </span></li><br>
+                        <li><span>2019 – 2021 : Lycée Paul Valéry (1ère / Terminal Bac STI2D) </span></li><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="CM">
+        <h2 class="title">
+            Pour plus d'information, Contactez moi !
+        </h2>
+        <div class="container-contact">
+            <div class="col2">
+                <img src="./image/amis-masculins-feminins-parler-boire-biere_74855-6547.avif" alt="tee">
+            </div>
+            <section class="container-CM" id="CM">
+                <h3>Formulaire de contact</h3>
+                <form action="https://formspree.io/f/xwkjwadv" method="POST">
+                    <label for="fname">Nom & prénom</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
+                  
+                    <label for="sujet">Sujet</label>
+                    <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
+                  
+                    <label for="emailAddress">Email</label>
+                    <input id="emailAddress" type="email" name="email" placeholder="Votre email">
+                  
+                  
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Votre message" style="height:200px"></textarea>
+                  
+                    <input type="submit" value="Envoyer">
+                </form>
+            </section>
+        </div>
+    </div>
+  </body>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+</html>
